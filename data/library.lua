@@ -1,0 +1,80 @@
+---@class UInt64
+---@field hex fun(self: UInt64): string
+---@field num fun(self: UInt64): number
+---@operator eq(UInt64): boolean
+
+---@class VPadButtonType
+---@field A integer
+---@field B integer
+---@field X integer
+---@field Y integer
+---@field LEFT integer
+---@field RIGHT integer
+---@field UP integer
+---@field DOWN integer
+---@field ZL integer
+---@field ZR integer
+---@field L integer
+---@field R integer
+---@field PLUS integer
+---@field MINUS integer
+---@field HOME integer
+---@field SYNC integer
+---@field STICK_R integer
+---@field STICK_L integer
+---@field TV integer
+
+---@class VPadStickType
+---@field R_EMULATION_LEFT integer
+---@field R_EMULATION_RIGHT integer
+---@field R_EMULATION_UP integer
+---@field R_EMULATION_DOWN integer
+---@field L_EMULATION_LEFT integer
+---@field L_EMULATION_RIGHT integer
+---@field L_EMULATION_UP integer
+---@field L_EMULATION_DOWN integer
+
+---@class VPadStatusType
+---@field hold integer
+---@field trigger integer
+---@field release integer
+
+---@class TimeFormatType
+---@field TICKS integer
+---@field NANOSECONDS integer
+---@field MICROSECONDS integer
+---@field MILLISECONDS integer
+---@field SECONDS integer
+
+---@class LuaromaType
+---@field VPadButton VPadButtonType
+---@field VPadStick VPadStickType
+---@field VPadStatus VPadStatusType
+---@field TimeFormat TimeFormatType
+---@field uint64 fun(str: string): UInt64
+---@field Print fun(str: string): nil
+---@field Write fun(str: string): nil
+---@field KernelMemcpy fun(dest: integer, src: integer, size: integer): nil
+---@field KernelMemset fun(dest: integer, value: integer, size: integer): nil
+---@field Peek8 fun(address: integer): integer
+---@field Peek16 fun(address: integer): integer
+---@field Peek32 fun(address: integer): integer
+---@field Poke8 fun(address: integer, value: integer): nil
+---@field Poke16 fun(address: integer, value: integer): nil
+---@field Poke32 fun(address: integer, value: integer): nil
+---@field VPadRead fun(): VPadStatusType
+---@field TimeToTicks fun(value: UInt64, timeFormat: integer): UInt64
+---@field GetSystemTime fun(): UInt64
+---@field OSSleepTicks fun(ticks: UInt64): nil
+---@field OSFatal fun(message: string): nil
+---@field FileExists fun(path: string): boolean
+---@field CreateDirectory fun(path: string): boolean
+---@field CopyFile fun(src: string, dest: string): boolean
+---@field WriteToFile fun(path: string, data: string): boolean
+---@field ReadFile fun(path: string): string
+---@field HttpGet fun(url: string): string
+---@field HttpPost fun(url: string, body: string): string
+---@field DownloadToFile fun(url: string, path: string): boolean
+
+---@type LuaromaType
+Luaroma = Luaroma or {}
